@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>
+            <input type="text" v-model.lazy="word">
+            <button v-on:click="addWord(word)">Save</button>
+            <button v-on:click="show()">Show Words</button> 
+            <button v-on:click="clear()">Clear</button>
+            <div v-if="showwords">
+                <br>
+                <h4>Show words:</h4>
+                <div v-if="isEmpty">
+                  <h4>Empty</h4>
+                </div>
+                <div v-else>
+                  <ul>
+                    <li v-for="w in words">
+                      {{w}}
+                    </li>
+                  </ul>
+              </div>
+            </div>
+        </p>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
